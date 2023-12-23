@@ -1,0 +1,172 @@
+﻿<Window x:Class="WpfApp.AboutMenuWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp"
+        mc:Ignorable="d"
+        Height="450" Width="800">
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TreeView Grid.Column="0" Margin="0, 10, 0, 0">
+                <TreeViewItem>
+                    <TreeViewItem.Header>
+                        <TextBlock>
+                          <Hyperlink Command="{Binding AboutProgramCommand}"
+                                     Foreground="Black" FontSize="14">
+                              О программе  
+                          </Hyperlink>
+                        </TextBlock>
+                    </TreeViewItem.Header>
+                </TreeViewItem>
+                <TreeViewItem Header="Вкладка Клиента" FontSize="14">
+                    <TreeViewItem Header="Вкладка В помещении" FontSize="14">
+                        <TreeViewItem>
+                            <TreeViewItem.Header>
+                                <TextBlock>
+                            <Hyperlink Command="{Binding TaskInfoCommand}"
+                                       Foreground="Black" FontSize="14">
+                                Сведения о меню  
+                            </Hyperlink>
+                                </TextBlock>
+                            </TreeViewItem.Header>
+                        </TreeViewItem>
+                        <TreeViewItem>
+                            <TreeViewItem.Header>
+                                <TextBlock>
+                            <Hyperlink Command="{Binding AddTaskCommand}"
+                                       Foreground="Black" FontSize="14">
+                                Добавление блюд 
+                            </Hyperlink>
+                                </TextBlock>
+                            </TreeViewItem.Header>
+                        </TreeViewItem>
+                        <TreeViewItem>
+                            <TreeViewItem.Header>
+                                <TextBlock>
+                            <Hyperlink Command="{Binding UpdateAndDeleteTaskCommand}"
+                                       Foreground="Black" FontSize="14">
+                                Редактирование/Удалени блюд
+                            </Hyperlink>
+                                </TextBlock>
+                            </TreeViewItem.Header>
+                        </TreeViewItem>
+                    </TreeViewItem>
+                    <!--<TreeViewItem Header="Вкладка доставки" FontSize="14">
+                        <TreeViewItem>
+                            <TreeViewItem.Header>
+                                <TextBlock>
+                            <Hyperlink Command="{Binding InfSectionInfoCommand}"
+                                       Foreground="Black" FontSize="14">
+                                Сведения о доставке
+                            </Hyperlink>
+                                </TextBlock>
+                            </TreeViewItem.Header>
+                        </TreeViewItem>
+                        --><!--<TreeViewItem>
+                            <TreeViewItem.Header>
+                                <TextBlock>
+                            <Hyperlink Command="{Binding AddAndDeleteInfSectionCommand}"
+                                       Foreground="Black" FontSize="14">
+                                Добавление блюд 
+                            </Hyperlink>
+                                </TextBlock>
+                            </TreeViewItem.Header>
+                        </TreeViewItem>-->
+                        <!--<TreeViewItem Header="Информационные страницы" FontSize="14">
+                            <TreeViewItem>
+                                <TreeViewItem.Header>
+                                    <TextBlock>
+                            <Hyperlink Command="{Binding PageInfoCommand}"
+                                       Foreground="Black" FontSize="14">
+                                Сведения оменю
+                            </Hyperlink>
+                                    </TextBlock>
+                                </TreeViewItem.Header>
+                            </TreeViewItem>
+                            <TreeViewItem>
+                                <TreeViewItem.Header>
+                                    <TextBlock>
+                            <Hyperlink Command="{Binding AddAndDeletePageCommand}"
+                                       Foreground="Black" FontSize="14">
+                                Добавление страниц и их удаление
+                            </Hyperlink>
+                                    </TextBlock>
+                                </TreeViewItem.Header>
+                            </TreeViewItem>
+                        </TreeViewItem>--><!--
+                    </TreeViewItem>-->
+                    <!--<TreeViewItem>
+                        <TreeViewItem.Header>
+                            <TextBlock>
+                            <Hyperlink Command="{Binding TrackTimeInfoCommand}"
+                                       Foreground="Black" FontSize="14">
+                                Треккинг времени
+                            </Hyperlink>
+                            </TextBlock>
+                        </TreeViewItem.Header>
+                    </TreeViewItem>-->
+                </TreeViewItem>
+                <TreeViewItem Header="Вкладка Менеджера" FontSize="14">
+                    <TreeViewItem>
+                        <!--<TreeViewItem.Header>
+                            <TextBlock>
+                            <Hyperlink Command="{Binding ReportTrackTimeInfoCommad}"
+                                       Foreground="Black" FontSize="14">
+                                Вкладка Финансы
+                            </Hyperlink>
+                            </TextBlock>
+                        </TreeViewItem.Header>-->
+                    </TreeViewItem>
+                    <TreeViewItem>
+                        <TreeViewItem.Header>
+                            <TextBlock>
+                            <Hyperlink Command="{Binding ReportStateTaskForCurrentProjectInfoCommand}"
+                                       Foreground="Black" FontSize="14">
+                                Вкладка заказы
+                            </Hyperlink>
+                            </TextBlock>
+                        </TreeViewItem.Header>
+                    </TreeViewItem>
+                    <TreeViewItem>
+                        <TreeViewItem.Header>
+                            <TextBlock>
+                            <Hyperlink Command="{Binding WorkersGridProjectCommand}"
+                                    Foreground="Black" FontSize="14">
+                                    Вкладка столы
+                            </Hyperlink>
+                            </TextBlock>
+                        </TreeViewItem.Header>
+                    </TreeViewItem>
+                </TreeViewItem>
+                <!--<TreeViewItem>
+                    <TreeViewItem.Header>
+                        <TextBlock>
+                            <Hyperlink Command="{Binding WorkersGridProjectCommand}"
+                                       Foreground="Black" FontSize="14">
+                                Вкладка столы
+                            </Hyperlink>
+                        </TextBlock>
+                    </TreeViewItem.Header>
+                </TreeViewItem>-->
+                <!--<TreeViewItem>
+                    <TreeViewItem.Header>
+                        <TextBlock>
+                            <Hyperlink Command="{Binding ProjectsGridCommand}"
+                                       Foreground="Black" FontSize="14">
+                                Вкладка списка проектов
+                            </Hyperlink>
+                        </TextBlock>
+                    </TreeViewItem.Header>
+                </TreeViewItem>-->
+            </TreeView>
+            <TextBlock Margin="10" Grid.Column="1" Text="{Binding AboutText}"
+               Foreground="Black" FontSize="14" TextWrapping="WrapWithOverflow"/>
+        </Grid>
+        <Button Content="Отменить" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="30" Width="98" Background="#FFC61D1D" Grid.Column="0"  Command="{Binding Cancell}" Cursor="Hand"/>
+    </Grid>
+</Window>

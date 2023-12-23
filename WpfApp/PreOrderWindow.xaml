@@ -1,0 +1,23 @@
+﻿<Window x:Class="WpfApp.PreOrderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp"
+        mc:Ignorable="d"
+        Title="PreOrderWindow" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="Client" Content="В помещении" HorizontalAlignment="Left" VerticalAlignment="Top" Height="50" Width="190" FontSize="24" Command="{Binding OrderAutCommand}" Background="#FFC61D1D" BorderBrush="#FFC61D1D" Margin="194,157,0,0"/>
+        <Button x:Name="Manager" Content="Доставка" HorizontalAlignment="Left" VerticalAlignment="Top" Height="50" Width="190" FontSize="24" Margin="416,157,0,0" Command="{Binding DeliveryAutCommand}" Background="#FFC61D1D"/>
+        <Label Content="Приложение &quot;Ресторан&quot;" HorizontalAlignment="Center" Margin="0,47,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.32,0.289" FontSize="36"/>
+        <Label Content="Стол:" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="190" FontSize="20" Margin="194,212,0,0"/>
+        <!--<TextBox HorizontalAlignment="Left" Height="37" Margin="194,252,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" FontSize="20" Text="{Binding stol}"/>-->
+        <Label Content="Адрес:" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="190" FontSize="20" Margin="416,212,0,0"/>
+        <TextBox HorizontalAlignment="Left" Height="37" Margin="416,252,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" FontSize="20" Text="{Binding adress}"/>
+        <Label Content="Телефон:" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top" Width="190" FontSize="20" Margin="416,298,0,0"/>
+        <TextBox HorizontalAlignment="Left" Height="37" Margin="416,338,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" FontSize="20" Text="{Binding number_phone}"/>
+        <Button Content="Отменить" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="30" Width="98" Background="#FFC61D1D" Grid.Column="0"  Command="{Binding Cancell}" Cursor="Hand"/>
+        <ComboBox HorizontalAlignment="Left" Margin="194,246,0,0" VerticalAlignment="Top" Width="190" Height="43" SelectedItem="{Binding selectedStol}" DisplayMemberPath="id" ItemsSource="{Binding Path = DataContext.AllStols, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}" />
+        <!--<ComboBox x:Name="PatientCardD" Width="216" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" SelectedItem="{Binding SelectedCardPatient}" DisplayMemberPath="FullName" SelectedValuePath="Id" ItemsSource="{Binding Path = DataContext.AllPatients, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"/>-->
+    </Grid>
+</Window>
